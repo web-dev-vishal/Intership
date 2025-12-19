@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+.nav-btn {
+  padding: 1rem 2rem;
+  font-weight: bold;
+  border-right: 2px solid #1f2937;
+  transition: background-color 0.2s;
+}
+
+.nav-btn:last-child {
+  border-right: none;
+}
+
+.nav-btn:hover {
+  background-color: #fed7aa;
+}
+
+.nav-btn.active {
+  background-color: #fb923c;
+  color: white;
+}
