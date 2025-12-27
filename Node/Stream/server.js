@@ -1,9 +1,7 @@
 const fs = require("fs");
 
 // create read stream
-const readStream = fs.createReadStream("bigFile.txt", {
-  encoding: "utf-8",
-});
+const readStream = fs.createReadStream("bigFile.txt");
 
 // create write stream
 const writeStream = fs.createWriteStream("copybigFile.txt");
