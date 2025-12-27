@@ -1,16 +1,32 @@
 const fs = require("fs");
 
-const readStream = fs.createReadStream("bigFile.txt");
+// create read stream
+const readStream = fs.createReadStream("bigFile.txt", {
+  encoding: "utf-8",
+});
 
+// create write stream
 const writeStream = fs.createWriteStream("copybigFile.txt");
 
-readStream.pipe(writeStream);  
+// pipe read stream to write stream
+readStream.pipe(writeStream);
 
+// when writing is finished
 writeStream.on("finish", () => {
-    console.log("File copy using strean");
-})
+  console.log("File copied successfully using stream");
+});
 
+// reading data chunk by chunk
 readStream.on("data", (chunk) => {
-    console.log("Reading a smaall data chunk by chunk");
-    console.log(chunk.toString());
+  console.log("Reading small data chunk:");
+  console.log(chunk);
+});
+
+// error handling (VERY IMPORTANT)
+readStream.on("error", (err) => {
+  console.error("Error while reading file:", err);
+});
+
+writeStream.on("error", (err) => {
+  console.error("Error while writing file:", err);
 });
