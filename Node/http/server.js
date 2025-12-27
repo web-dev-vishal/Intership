@@ -4,7 +4,8 @@ const myServer = http.createServer((req, res) => {
     if (req.url === "/") {
         res.write("Welcome to home Page");
         res.end();
-    } else if (req.url === "/about") {
+    } 
+    else if (req.url === "/about") {
         res.write("Welcome to about Page");
         res.end();
     } 
