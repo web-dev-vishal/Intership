@@ -7,7 +7,8 @@ const myServer = http.createServer((req, res) => {
     } else if (req.url === "/about") {
         res.write("Welcome to about Page");
         res.end();
-    } else {
+    } 
+     else {
         res.write(" 404 - Page Not Found");
         res.end();
     }
