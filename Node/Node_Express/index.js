@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const PORT = 8080
+const PORT = 8060
 
 app.get('/', (req, res) => {
     res.send('Home Page!')
@@ -20,5 +20,5 @@ app.post("/login", (req,res)=> {
 })
 
 app.listen(PORT, () => {
-    console.log(` Server is listening at http://localhost:8080`)
+    console.log(` Server is listening at http://localhost:8060`)
 })
