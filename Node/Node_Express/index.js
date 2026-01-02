@@ -9,11 +9,11 @@ app.get('/', (req, res) => {
 app.get('/student', (req, res) => {
     res.json({
         name: "Aryan",
-        course: "MBA",
+        course: "MBBS",
         Year: 4,
         success: true
     })
-})
+    })
 
 app.post("/login", (req,res)=> {
     res.send("Login API")
