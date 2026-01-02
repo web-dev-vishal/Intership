@@ -1,12 +1,16 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const PORT = 8080
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
 
 app.post('/', (req, res) => {
     console.log(req.body)
     res.json({ success: true })
 })
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:3000`))
+app.listen(PORT, () =>{ 
+    console.log(` Server is listening at http://localhost:8080`)
+})
