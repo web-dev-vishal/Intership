@@ -4,7 +4,6 @@ const port = 7000
 
 app.use(express.json())
 
-
 const securityCheck = (req,res,next) => {
     console.log("Security Check done ✅")
     next();
