@@ -13,7 +13,7 @@ app.get('/student', (req, res) => {
         Year: 4,
         success: true
     })
-    })
+});
 
 app.post("/login", (req,res)=> {
     res.send("Login API")
