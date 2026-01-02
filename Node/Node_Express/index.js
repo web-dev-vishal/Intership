@@ -3,14 +3,18 @@ const app = express()
 const PORT = 8080
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send('Home Page!')
 })
 
-app.post('/', (req, res) => {
-    console.log(req.body)
-    res.json({ success: true })
+app.get('/student', (req, res) => {
+    res.json({
+        name: "Aryan",
+        course: "MBA",
+        Year: 4,
+        success: true
+    })
 })
 
-app.listen(PORT, () =>{ 
+app.listen(PORT, () => {
     console.log(` Server is listening at http://localhost:8080`)
 })
