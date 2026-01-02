@@ -17,7 +17,7 @@ app.get('/student', (req, res) => {
 
 app.post("/login", (req,res)=> {
     res.send("Login API")
-})
+});
 
 app.listen(PORT, () => {
     console.log(` Server is listening at http://localhost:8060`)
