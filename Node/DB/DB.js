@@ -1,43 +1,46 @@
-const express = require('express');
-const app = express();
+const express = require("express");
 const fs = require("fs");
-const port = 3003
 
-app.use(express.json())
+const app = express();
+const port = 3003;
 
-const FILE_NAME = 'students.json';
+app.use(express.json());
+
+const FILE_NAME = "students.json";
 
 const readData = () => {
-if (!fs.existsSync (FILE_NAME)) return [];
-const data = fs.readFileSync (FILE_NAME);
-return JSON.parse(data);
+    if (!fs.existsSync(FILE_NAME)) return [];
+    const data = fs.readFileSync(FILE_NAME, "utf-8");
+    return JSON.parse(data);
 };
 
 const writeData = (data) => {
     fs.writeFileSync(FILE_NAME, JSON.stringify(data, null, 2));
-}
+};
 
-app.get('/students', (req, res) => {
+app.get("/students", (req, res) => {
     const students = readData();
-    res.send(students);
-})
+    res.json(students);
+});
 
-app.post('/students', (res,req) => {
+app.post("/students", (req, res) => {
     const students = readData();
 
     const newStudent = {
-        id: students.lenght + 1,
+        id: students.length + 1,
         name: req.body.name,
-        course: req.body.course
+        course: req.body.course,
     };
-    
-})
 
-app.post('/', (req, res) => {
-    console.log(req.body)
-    res.json({ success: true })
-})
+    students.push(newStudent);
+    writeData(students);
 
-app.listen(port, () =>{ 
-    console.log(`Example app listening at http://localhost:{port}`)
+    res.json({
+        message: "Student saved to JSON file",
+        student: newStudent,
+    });
+});
+
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
 });
