@@ -17,7 +17,21 @@ const writeData = (data) => {
     fs.writeFileSync(FILE_NAME, JSON.stringify(data, null, 2));
 }
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/students', (req, res) => {
+    const students = readData();
+    res.send(students);
+})
+
+app.post('/students', (res,req) => {
+    const students = readData();
+
+    const newStudent = {
+        id: students.lenght + 1,
+        name: req.body.name,
+        course: req.body.course
+    };
+    
+})
 
 app.post('/', (req, res) => {
     console.log(req.body)
