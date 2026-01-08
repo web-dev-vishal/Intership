@@ -1,7 +1,7 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const app = express()
-const port = 4005 
+const PORT = 4005 
 
 app.use(express.json())
 
@@ -12,6 +12,6 @@ app.post('/', (req, res) => {
     res.json({ success: true })
 })
 
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:{port}`)
-})
+app.listen(PORT, () => {
+    console.log(`Example app listening at http://localhost:{PORT}`)
+}); 
