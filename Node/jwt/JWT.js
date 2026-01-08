@@ -2,7 +2,7 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const app = express();
 const dotenv = require("dotenv")
-const PORT = 4005 
+const PORT = 4005
 
 require.dotenv();
 app.use(express.json())
@@ -11,9 +11,16 @@ const jwt = process.env.JWT
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
-app.post('/', (req, res) => {
-    console.log(req.body)
-    res.json({ success: true })
+app.post('/login', (req, res) => {
+    const { username } = - req.body
+
+    if (!username) {
+        return res.status(400).json({
+            message: "UserName Required"
+        })
+
+
+    }
 })
 
 app.listen(PORT, () => {
