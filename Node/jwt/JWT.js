@@ -5,6 +5,8 @@ const PORT = 4005
 
 app.use(express.json())
 
+const key = ""
+
 app.get('/', (req, res) => res.send('Hello World!'))
 
 app.post('/', (req, res) => {
