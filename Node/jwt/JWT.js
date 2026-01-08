@@ -1,11 +1,13 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
-const app = express()
+const app = express();
+const dotenv = require("dotenv")
 const PORT = 4005 
 
+require.dotenv();
 app.use(express.json())
 
-const key = ""
+const jwt = process.env.JWT
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
@@ -15,5 +17,5 @@ app.post('/', (req, res) => {
 })
 
 app.listen(PORT, () => {
-    console.log(`Example app listening at http://localhost:{PORT}`)
+    console.log(`Server is listening on http://localhost:{PORT}`)
 }); 
