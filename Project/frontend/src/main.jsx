@@ -4,11 +4,15 @@ import './index.css'
 import App from './App.jsx'
 import Login from './components/Login.jsx'
 import Dashboard from './components/Dashboard.jsx'
+import CompanyList from './components/CompanyList.jsx'
+import AddCompany from './components/AddCompany.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
     <Login></Login>
     <Dashboard></Dashboard>
+    <CompanyList></CompanyList>
+    <AddCompany></AddCompany>
   </StrictMode>,
 )
