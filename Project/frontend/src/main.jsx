@@ -14,5 +14,5 @@ createRoot(document.getElementById('root')).render(
     <Dashboard></Dashboard>
     <CompanyList></CompanyList>
     <AddCompany></AddCompany>
-  </StrictMode>,
+  </StrictMode>
 )

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getCompaines } from "../services/api.js";
+import { getCompaines } from "./services/api.js";
 
 function CompanyList() {
   const [companies, setCompanies] = useState([]);

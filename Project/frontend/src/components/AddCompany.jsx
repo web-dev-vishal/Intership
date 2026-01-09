@@ -6,7 +6,7 @@ function AddCompany() {
   const [status, setStatus] = useState("Applied");
 
   const handleAdd = async () => {
-    await AddCompany({ company, status });
+    await addCompany({ company, status });
     setCompany("");
     setStatus("Applied");
     alert("Company Added");
